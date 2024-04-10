@@ -1,58 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mano Farah</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="">
-    <!-- menu superior -->
-    <div class="nav">
-        <div class="titulo">
-            <div class=""></div>
-            <h1 class="">Mano Farah</h1>
-        </div>
-        <div class="navegacao">
-            <a href="">Sobre •</a>
-            <a href="">Serviços •</a>
-            <a href="">Meu trabalho •</a>
-            <a href="">Contato •</a>
-        </div>
-    </div>
+    <div class="x-y">
+        <!-- Botão do Menu para Dispositivos Móveis -->
+        <button id="menuButton" onclick="toggleMenu()">☰ Menu</button>
 
-    <!-- div do olá -->
-    <div>
-    <div class="pt-5 pl-[4rem] flex bg-[#919FFd]/[.25]">
-        <img src="./img/ab37d99fec1c0626d883a98053698eb9.png" alt="" class="rounded-3xl h-[20rem] w-[20rem]">
-        <div class="ml-5 flex flex-col gap-2">
-         <h2 class="text-[30px] font-semibold font-mono">Olá, eu sou Gabriel Farah</h2>
-         <div class="flex flex-col gap-5 ml-2">
-          <p>• Vagabundo nato, um charme de ser humano, com inúmeros potenciais</p>
-          <p>• Gosto de LoL, solto pipa e jogo bola</p>
-          <p>• Jogo laser no avião para ver se ele cai</p>
-          <p>• Construí um império de capivaras no minecraft</p>
+        <!-- menu superior -->
+        <div class="menu" id="menu">
+            <div class="titulo">
+                <div></div>
+                <a href=""><h1>Mano Farah</h1></a>
+                <div></div>
+            </div>
+            <div class="navegacao">
+                <section>
+                    <a href="#sobre" onclick="">Sobre</a>
+                    <a href="#projetos" onclick="">Projetos</a>
+                    <a href="#novidades" onclick="">Novidades</a>
+                    <a href="" onclick="">Contato</a>
+                </section>
+            </div>
+        </div>
+
+        <!-- conteúdo -->
+        <div class="apresentacao">
+            <!-- div do olá -->
+            <div class="azulao">
+                <img src="./img/ab37d99fec1c0626d883a98053698eb9.png" alt="">
+                <div>
+                    <h2>Olá, eu sou Gabriel Farah</h2>
+                    <div>
+                        <p>• Vagabundo nato, um charme de ser humano, com inúmeros potenciais</p>
+                        <p>• Gosto de LoL, solto pipa e jogo bola</p>
+                        <p>• Aponto laser no avião para ver se ele cai</p>
+                        <p>• Construí um império de capivaras no minecraft</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- parte 2 -->
+            <div id="conteudo" class="conteudo open-contato">
+             <div id="formStyle">
+              <h2>Entre em Contato</h2>
+              <div class="Whatsapp">
+               <a href="https://wa.me/5524992046724?text=Olá,%20Vim%20do%20seu%20Portifólio." target="_blank" rel="noopener noreferrer">
+               <img src="./img/Whatsapp.jpeg" style="border-radius:5px;" alt="" width="20px" height="20px"/>
+                </a>
+                <a href="https://www.linkedin.com/in/gabriel-farah-0320a8234/" target="_blank" rel="noopener noreferrer">
+                 <img src="./img/Linkedin.jpeg" alt="" width="20px" height="20px" />
+                </a>
+                </div>
+                    <p>Ou envie-me um email:</p>
+                <form id="emailForm">
+                <label for="emailInput">Seu Email:</label>
+                    <input type="email" id="emailInput" name="email" required>
+                <label for="messageInput">Mensagem:</label>
+                <textarea id="messageInput" name="message" rows="4" style="resize: none" required></textarea>
+                <button type="submit">Enviar</button>
+                          </form>
+                      </div>
+                </div>
          </div>
         </div>
-    </div>
 
-    <!-- transição -->
-    <div class="h-32 bg-gradient-to-b from-[#919FFd]/[.25] to-[#32A072]/[.25]">    
-    </div>
+    <script>
+        /* Abrir/Fechar Menu */
+        function toggleMenu() {
+            let menu = document.getElementById("menu");
+            menu.classList.toggle("open");
+            let botao = document.getElementById("menuButton");
+            botao.classList.toggle("close");
+        }
 
-    <!-- parte 2 -->
-    <div class="pl-[5rem] bg-[#32A072]/[.25] h-auto">
-     <h2 class="text-[30px] font-semibold font-mono">Um pouco sobre mim: </h2>
-     <div>
-        <p>• Vagabundo nato, um charme de ser humano, com inúmeros potenciais</p>
-        <p>• Gosto de LoL, solto pipa e jogo bola</p>
-        <p>• Jogo laser no avião para ver se ele cai</p>
-        <p>• Construí um império de capivaras no minecraft</p>
-     </div>
-    </div>
-  </div>
- </div>
+        /* Alterar o Conteúdo Dinâmico */
+        function alterarConteudo() {
+    const hash = window.location.hash.slice(1);
+    const conteudoDiv = document.getElementById('conteudo');
+
+    if (hash === 'sobre') {
+        let conteudo = '<h2> Sobre: </h2>';
+            conteudo += '<div class="sobre">';
+            conteudo += '<div>';
+            conteudo += '<p>Olá, meu nome é Gabriel Farah. Sou um estudante apaixonado por criar soluções inovadoras, então me esforçarei para melhorar diariamente. Tenho experiência leve em desenvolvimento web e o básico de java. Meu objetivo é contribuir para projetos desafiadores e aprender continuamente.</p>';
+            conteudo += '<ul>';
+            conteudo += '<label>• Nome:</label>';
+            conteudo += ' <p>Gabriel Leopoldino Farah</p>';
+            conteudo += '<label>• Idade:</label>';
+            conteudo += ' <p>20 Anos</p>';
+            conteudo += '<label>• Paixão:</label>';
+            conteudo += '<p>Aprender</p>';
+            conteudo += ' <label>• Currículo:</label>';
+            conteudo += '<p></p>';
+            conteudo += '</ul>';
+            conteudo += '</div>';
+            conteudo += ' <a href="http://lattes.cnpq.br/1416113503597657" target="_blank" rel="noopener noreferrer"><img id="eu" src="./img/image.png" alt=""></a>'
+            conteudo += '</div>';
+        conteudoDiv.innerHTML = conteudo;
+
+    } else if(hash === 'projetos'){
+        let conteudo = '<div class="projetos">';
+            conteudo += '<h1>Projetos:</h1>';
+            conteudo += ' <p>Visite meu GitHub:</p>';
+            conteudo += ' <a href="https://github.com/GabrielFarah3006" target="_blank" rel="noopener noreferrer">';
+            conteudo += ' <img class="github" src="./img/github-6980894_1280.webp" alt=""></a>';
+            conteudo += '</div>';
+            conteudoDiv.innerHTML = conteudo;
+    } else if (hash === 'novidades') {
+        let conteudo = '<div class="novidades">';
+            conteudo += '<h1>Nenhuma! Mas olha esse <b class="rgb">RGB</b> lindo!</h1>';
+                conteudoDiv.innerHTML = conteudo;
+
+    }else{
+        conteudoDiv.textContent = 'Página não encontrada.';
+    }
+}
+
+window.addEventListener('hashchange', alterarConteudo);
+//
+    /* Formulário */
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const formData = new FormData(this); 
+            const email = formData.get('email');
+            const message = formData.get('message'); 
+
+            /* Dados Email */
+            const subject = encodeURIComponent('Email pelo Portifólio');
+            const body = encodeURIComponent(`Email: ${email}\n\nMensagem: ${message}`);
+            const url = `mailto:gabriellfarah@hotmail.com?subject=${subject}&body=${body}`;
+
+            /* Link email */
+            window.open(url);
+
+           /* Limpar formulário */
+            this.reset();
+        });
+    </script>
 </body>
-</html> 
+</html>

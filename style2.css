@@ -34,25 +34,24 @@
         padding: 0.625rem 0.938rem;
         border: none;
         cursor: pointer;
-        transition: top 0.3s ease;
+        transition: left 0.3s ease;
         display: suvaco; /* Esconder o botão por padrão em telas maiores */
     }
      #menuButton.close{
-        top: 15rem;
+        left: 10rem;
     }
     .menu {
-        display: flex;
-        flex-direction: column;
         position: fixed;
-        top: -14.2rem;
-        width: 100vw;
-        height: 14.2rem;
+        top: 0;
+        left: -9.375rem;
+        width: 9.375rem;
+        height: 100vh;
         background-color: black;
-        transition: top 0.3s ease;
+        transition: left 0.3s ease;
         box-sizing: border-box;
     }
     .menu.open {
-        top: 0;
+        left: 0;
     }
 
    
@@ -66,18 +65,13 @@
         height: auto;
         width: 0.5rem;
     }
-    .titulo a{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+    
     .titulo h1{
-        border-top: 0.5rem solid rgb(8 47 73);
         padding: 1rem;
         font-size: 1.125rem;
         line-height: 1.75rem;
         font-weight: bold;
-        text-align: center;
+        text-wrap: nowrap;
     }
     .navegacao section{
         display: flex;
@@ -107,10 +101,10 @@
         width: 100%;
         height: 100vh;
         padding-left: 1rem;
-        transition: margin-top 0.3s ease;
+        transition: margin-left 0.3s ease;
     }
     .menu.open + .apresentacao {
-        margin-top: 15rem;
+        margin-left: 10rem;
     }
 
 
